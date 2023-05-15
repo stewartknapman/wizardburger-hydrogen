@@ -45,6 +45,7 @@ export default function App() {
       <body>
         <h1>Hello, {name}</h1>
         <p>This is a custom storefront powered by Hydrogen</p>
+        <p>Doing a test change</p>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
