@@ -44,11 +44,11 @@ export default {
         cache,
         waitUntil,
         i18n: {language: 'EN', country: 'US'},
-        publicStorefrontToken: !env.STOREFRONT_REGION && env.STOREFRONT_REGION === 'secondary' ? env.SECONDARY_PUBLIC_STOREFRONT_API_TOKEN : env.PUBLIC_STOREFRONT_API_TOKEN,
-        privateStorefrontToken: !env.STOREFRONT_REGION && env.STOREFRONT_REGION === 'secondary' ? env.SECONDARY_PRIVATE_STOREFRONT_API_TOKEN : env.PRIVATE_STOREFRONT_API_TOKEN,
-        storeDomain: !env.STOREFRONT_REGION && env.STOREFRONT_REGION === 'secondary' ? `https://${env.SECONDARY_PUBLIC_STORE_DOMAIN}` : `https://${env.PUBLIC_STORE_DOMAIN}`,
+        publicStorefrontToken: !!env.STOREFRONT_REGION && env.STOREFRONT_REGION === 'secondary' ? env.SECONDARY_PUBLIC_STOREFRONT_API_TOKEN : env.PUBLIC_STOREFRONT_API_TOKEN,
+        privateStorefrontToken: !!env.STOREFRONT_REGION && env.STOREFRONT_REGION === 'secondary' ? env.SECONDARY_PRIVATE_STOREFRONT_API_TOKEN : env.PRIVATE_STOREFRONT_API_TOKEN,
+        storeDomain: !!env.STOREFRONT_REGION && env.STOREFRONT_REGION === 'secondary' ? `https://${env.SECONDARY_PUBLIC_STORE_DOMAIN}` : `https://${env.PUBLIC_STORE_DOMAIN}`,
         storefrontApiVersion: env.PUBLIC_STOREFRONT_API_VERSION || '2023-04',
-        storefrontId: !env.STOREFRONT_REGION && env.STOREFRONT_REGION === 'secondary' ? env.SECONDARY_PUBLIC_STOREFRONT_ID : env.PUBLIC_STOREFRONT_ID,
+        storefrontId: !!env.STOREFRONT_REGION && env.STOREFRONT_REGION === 'secondary' ? env.SECONDARY_PUBLIC_STOREFRONT_ID : env.PUBLIC_STOREFRONT_ID,
         storefrontHeaders: getStorefrontHeaders(request),
       });
 
